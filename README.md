@@ -1,8 +1,21 @@
-# React + Vite
+# DevTinder-UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A platform where developers can interact with each other.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Developer matchmaking based on interests.
+- Swipe-based UI for easy interaction.
+- User profile creation and customization.
+- Secure authentication system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend:** React, JavaScript
+- **Backend:** Node JS
+- **Database:** Mongo DB
+
+## 📦 Installation
+```sh
+git clone https://github.com/Yashg5080/devTinder.git
+cd devTinder
+npm install
+npm start
