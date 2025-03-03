@@ -13,12 +13,12 @@ export const Login = () => {
   const dispatch = useDispatch();
 
   const handleLogin = async () => {
-    const data = await axios.post(
-      BASE_URL +  "login",
+    const res = await axios.post(
+      BASE_URL +  "/login",
       { email, password },
       { withCredentials: true }
     );
-    dispatch(addUser(data.data));
+    dispatch(addUser(res.data));
     navigate("/");
   };
 
