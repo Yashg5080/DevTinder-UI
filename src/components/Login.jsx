@@ -8,26 +8,39 @@ import { BASE_URL } from "../utils/constants";
 export const Login = () => {
   const [email, setEmail] = useState("yash.gupta@gmail.com");
   const [password, setPassword] = useState("Test@123");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const handleLogin = async () => {
-    const res = await axios.post(
-      BASE_URL +  "/login",
-      { email, password },
-      { withCredentials: true }
-    );
-    dispatch(addUser(res.data));
-    navigate("/");
+    try {
+      const res = await axios.post(
+        BASE_URL + "/login",
+        { email, password },
+        { withCredentials: true }
+      );
+      dispatch(addUser(res.data));
+      navigate("/");
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "An error occurred. Please try again."
+      );
+    }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-[80vh]">
       <div className="card bg-base-200 w-96 shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center mb-4">Login</h2>
+          {error && <div className="text-red-500 mb-4">{error}</div>}
           <div className="form-control">
             <label className="input validator flex items-center space-x-2">
               <svg
@@ -53,6 +66,7 @@ export const Login = () => {
                 required
                 className="flex-1"
                 onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </label>
             <div className="validator-hint hidden">
@@ -90,6 +104,7 @@ export const Login = () => {
                 title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                 className="flex-1"
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </label>
             <p className="validator-hint hidden mt-2">
@@ -103,7 +118,10 @@ export const Login = () => {
             </p>
           </div>
           <div className="card-actions justify-center mt-4">
-            <button className="btn btn-primary" onClick={handleLogin}>
+            <button
+              className="btn btn-primary"
+              onClick={handleLogin}
+            >
               Login
             </button>
           </div>

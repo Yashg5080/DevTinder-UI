@@ -17,8 +17,6 @@ export const Body = () => {
         withCredentials: true,
       });
       dispatch(addUser(res.data));
-      console.log(res)
-
     } catch (error) {
       if (error.status === 401) {
         navigate("/login");
