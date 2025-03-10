@@ -23,6 +23,6 @@ export const Feed = () => {
     getFeed();
   }, []);
   return (
-    feedData && <UserCard user={feedData[3]} />
+    feedData && <UserCard user={feedData[2]} />
   )
 }

@@ -34,7 +34,7 @@ export const NavBar = () => {
   }
 
   return (
-    <div className="navbar bg-base-200 shadow-s">
+    <div className="navbar bg-base-300 shadow-s sticky top-0 z-50">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" to="/">💘DevTinder</Link>
       </div>
@@ -59,7 +59,7 @@ export const NavBar = () => {
               {isDropdownOpen && (
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
                 >
                   <li>
                     <Link className="justify-between" to="/profile">

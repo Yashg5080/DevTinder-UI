@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const UserCard = ({ user }) => {
+export const UserCard = ({ user = {} }) => {
   const { firstName, lastName, photoUrl, about, gender, age, skills } = user;
   return (
     <div className="flex justify-center items-center bg-base-600 p-4">
