@@ -28,7 +28,7 @@ export const UserCard = ({ user = {} }) => {
       <div className="card bg-base-100 w-[340px] h-auto shadow-md rounded-lg flex flex-col items-center">
         <figure className="w-[280px] h-[300px] flex justify-center items-center mt-4 overflow-hidden rounded-lg">
           <img
-            src={photoUrl}
+            src={photoUrl || "https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png"}
             alt="User"
             className="w-full h-full object-cover"
           />

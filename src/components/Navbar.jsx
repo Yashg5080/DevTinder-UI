@@ -52,7 +52,7 @@ export const NavBar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src={data?.photoUrl}
+                    src={data?.photoUrl || "https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png"}
                   />
                 </div>
               </div>
