@@ -18,7 +18,7 @@ export const Body = () => {
       });
       dispatch(addUser(res.data));
     } catch (error) {
-      if (error.status === 401) {
+      if (error.status === 401 || error.status === 400) {
         navigate("/login");
       }
       console.error(error);
