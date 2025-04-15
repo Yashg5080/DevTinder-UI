@@ -21,7 +21,7 @@ export const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(BASE_URL + "/logout", {}, {
+      const res = await axios.post(BASE_URL + "/auth/logout", {}, {
         withCredentials: true,
       });
       if (res.status === 200) {

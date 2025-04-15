@@ -54,13 +54,13 @@ export const Login = () => {
       let res;
       if (isSignup) {
         // Signup logic
-        res = await axios.post(BASE_URL + "/signup", formData, {
+        res = await axios.post(BASE_URL + "/auth/signup", formData, {
           withCredentials: true,
         });
       } else {
         // Login logic
         res = await axios.post(
-          BASE_URL + "/login",
+          BASE_URL + "/auth/login",
           { email: formData.email, password: formData.password },
           { withCredentials: true }
         );
